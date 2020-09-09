@@ -17,8 +17,17 @@
     
 }
 
-.rightDiv{
+.rightDiv-long{
     width:300px;
+    height:20px;
+    align-self: center;
+    border:solid 1px;
+    background-color:rgba($color: #c4971c, $alpha: 0.5);
+}
+
+
+.rightDiv-short{
+    width:200px;
     height:20px;
     align-self: center;
     border:solid 1px;
