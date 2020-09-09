@@ -1,0 +1,26 @@
+.container{
+    display: flex;
+    justify-content:flex-start;
+    border: solid 1px;
+    background-color:rgba($color: #3ddfd1, $alpha: 0.3);
+    height:100px;
+    width:500px;
+    flex-wrap: wrap;
+}
+
+.leftDiv{
+    height:20px;
+    width:200px;
+    align-self: center;
+    border:solid 1px;
+    background-color:rgba($color: #b0d11c, $alpha: 0.5);
+    
+}
+
+.rightDiv{
+    width:300px;
+    height:20px;
+    align-self: center;
+    border:solid 1px;
+    background-color:rgba($color: #c4971c, $alpha: 0.5);
+}
