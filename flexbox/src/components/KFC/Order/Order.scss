@@ -1,0 +1,45 @@
+.menuList{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    //width:80%;
+    color:white;
+    width:100%;
+    background-color: rgba($color: #db2c15, $alpha: 0.8);
+
+    &__item{
+        background-color: transparent;
+        outline: none;
+        border:none;
+        height:100%;
+        width: 30%;
+        margin:5px;
+        font-weight: bold;
+        color:white;
+
+        &:hover{
+            background-color:rgba($color: #e28c0a, $alpha: 1.0)
+        }
+    }
+}
+
+.orderBar{
+    display:flex;
+    justify-content: flex-end;
+    margin-top:3%;
+    margin-right:6%;
+
+    //width:100%;
+
+    &__left{
+        color:rgba($color: #df1414, $alpha: 1.0)
+    }
+
+    &__right{
+        display:flex;
+        flex-direction: column;
+        border-bottom:solid 1px;
+        margin-left: 1%;
+    }
+}

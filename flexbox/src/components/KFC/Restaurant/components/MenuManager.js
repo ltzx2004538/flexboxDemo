@@ -58,7 +58,7 @@ class MenuManager extends React.Component {
     return (
       <div className="menuWrapper">
         <div className="menuLabel">
-          {this.props.mealItem}
+          {this.props.menuItem}
         </div>
         <div className="itemVolume">
           {!active ?

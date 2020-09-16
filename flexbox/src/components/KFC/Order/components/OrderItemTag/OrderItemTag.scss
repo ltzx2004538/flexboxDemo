@@ -1,0 +1,17 @@
+.itemTag{
+    display:flex;
+    flex:1;
+    // border:solid 1px;
+    margin:4% auto;
+    // color:red;
+
+    &__Item{
+        margin:auto 4px;
+    }
+
+    &__volume{
+        color:rgba($color: #439c10, $alpha: 1.0);
+    }
+
+
+}
