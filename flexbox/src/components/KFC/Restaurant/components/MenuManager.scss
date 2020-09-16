@@ -1,0 +1,24 @@
+.menuWrapper{
+    display:flex;
+    margin: auto 3%;
+    // background-color: red;
+}
+
+.menuLabel{
+    flex-wrap: nowrap;
+    // background-color: yellow;
+}
+
+.menuButton{
+    margin-left:10px;
+}
+
+
+.soldOut{
+    border:solid 1px;
+    background-color: transparent;
+
+    &:hover{
+        background-color: rgba($color: #867c7c, $alpha: 0.3);
+    }
+}

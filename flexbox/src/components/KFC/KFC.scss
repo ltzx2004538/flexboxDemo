@@ -1,0 +1,20 @@
+.container{
+    display:flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menuList{
+    display:flex;
+    flex-direction: row;
+    justify-content: center;
+    align-self: center;
+    margin-top: 5%;
+    width:80%;
+    color:white;
+    background-color: rgba($color: #db2c15, $alpha: 0.8);
+
+    &__item{
+       margin:5px;
+    }
+}

@@ -1,0 +1,26 @@
+.restaurantList{
+    flex:3;
+    display:flex;
+    flex-direction: column;
+    margin-top:2%;
+}
+
+.restaurant{
+    flex:1;
+    margin-top:2%;
+
+    &__menu{
+        display:flex;
+        justify-content: center;
+        flex-direction: row;
+        margin: 1% auto;
+        
+    }
+}
+
+.menuManager{
+    display:flex;
+    flex-direction: row;
+    margin: auto 5%;
+    background-color: rgba($color: #eedf14, $alpha: 1.0);
+}

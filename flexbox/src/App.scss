@@ -1,0 +1,12 @@
+.container{
+    display:flex;
+
+    &__left{
+        flex:1;
+        // border-left: solid 1px;
+    }
+
+    &__right{
+        flex:2
+    }
+}
