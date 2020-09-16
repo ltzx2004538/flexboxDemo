@@ -1,9 +1,6 @@
 .menuList{
     display:flex;
     flex-direction: row;
-    justify-content: center;
-    align-self: center;
-    //width:80%;
     color:white;
     width:100%;
     background-color: rgba($color: #db2c15, $alpha: 0.8);
@@ -37,8 +34,8 @@
     }
 
     &__right{
-        display:flex;
-        flex-direction: column;
+        display:inline-block;
+        align-items: flex-end;
         border-bottom:solid 1px;
         margin-left: 1%;
     }
