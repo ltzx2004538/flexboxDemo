@@ -17,6 +17,7 @@ class MenuManager extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateDisplay = this.updateDisplay.bind(this);
     this.handleOnchange = this.handleOnchange.bind(this);
+    this.handleBlur = this.handleBlur.bind(this);
   }
 
   handleOnchange(e) {
@@ -36,7 +37,8 @@ class MenuManager extends React.Component {
   }
 
   handleBlur(e) {
-    console.log("focus lost");
+    this.updateDisplay(this.props.volume);
+    this.toggleInput();
   }
 
   handleFocus(e) {
