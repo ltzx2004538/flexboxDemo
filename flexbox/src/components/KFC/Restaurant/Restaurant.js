@@ -50,7 +50,7 @@ class Restaurant extends React.Component {
                 <div className="restaurant">
                     <span>Beta</span>
                     <div className="restaurant__menu">
-                        {menuAlpha.map((item) => (
+                        {menuBeta.map((item) => (
                             <MenuManager mealItem={item.mealItem} />
                         ))}
                     </div>
