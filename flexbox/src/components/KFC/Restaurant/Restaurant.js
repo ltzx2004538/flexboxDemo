@@ -11,8 +11,8 @@ class Restaurant extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            menuAlpha: this.props.menu,
-            menuBeta: this.props.menu,
+            menuAlpha: this.props.menu, //浅拷贝
+            menuBeta: this.props.menu, //浅拷贝
         }
         this.handleSoldOutButtonAlpha = this.handleSoldOutButtonAlpha.bind(this);
         this.handleSoldOutButtonBeta = this.handleSoldOutButtonBeta.bind(this);
@@ -68,7 +68,7 @@ class Restaurant extends React.Component {
         return (
             <div className="restaurantList">
                 <div className="restaurant">
-                    <span>Alpha</span>
+                    <span> Restaurant Alpha</span>
                     <div className="restaurant__menu">
                         {menuAlpha.map((item) => (
                             <MenuManager itemKey={item.key}
@@ -81,7 +81,7 @@ class Restaurant extends React.Component {
                     </div>
                 </div>
                 <div className="restaurant">
-                    <span>Beta</span>
+                    <span>Restaurant Beta</span>
                     <div className="restaurant__menu">
                         {menuBeta.map((item) => (
                             <MenuManager mealItem={item.mealItem} 

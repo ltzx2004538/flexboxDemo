@@ -9,7 +9,7 @@ class MenuManager extends React.Component {
     super(props);
     this.state = {
       volume: this.props.volume,
-      default:this.props.volume,
+      default: this.props.volume,
       active: false,
     }
 
@@ -31,15 +31,21 @@ class MenuManager extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.onVolumeChange(this.props.itemKey,this.state.volume);
+    this.props.onVolumeChange(this.props.itemKey, this.state.volume);
     this.toggleInput();
   }
 
   handleBlur(e) {
-    console.log("lose focus");
+    setTimeout(() => {
+      if (this.state.active) {
+        this.setState({
+          active: false,
+        });
+      }
+    }, 100);
   }
-  
-  handleFocus(e){
+
+  handleFocus(e) {
 
   }
 
@@ -51,7 +57,7 @@ class MenuManager extends React.Component {
   }
 
   render() {
-    const { volume,defaultVolume, active } = this.state;
+    const { volume, defaultVolume, active } = this.state;
     return (
       <div className="menuWrapper">
         <div className="menuLabel">
@@ -69,7 +75,7 @@ class MenuManager extends React.Component {
               <input className='itemVolume__input'
                 onChange={this.handleOnchange}
                 onFocus={this.handleFocus}
-                onBlur = {this.handleBlur}
+                onBlur={this.handleBlur}
                 value={volume}
               />
             </form>
