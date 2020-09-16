@@ -56,6 +56,7 @@ class Restaurant extends React.Component {
                     <div className="restaurant__menu">
                         {menuAlpha.map((item) => (
                             <MenuManager mealItem={item.mealItem} 
+                                         volume={item.volume}
                                          onClick={()=>this.handleButtonAlpha(item.key)}     
                             />
                         ))}
@@ -66,6 +67,7 @@ class Restaurant extends React.Component {
                     <div className="restaurant__menu">
                         {menuBeta.map((item) => (
                             <MenuManager mealItem={item.mealItem} 
+                            volume={item.volume}
                             onClick={()=>this.handleButtonBeta(item.key)}
                             />    
                         ))}
