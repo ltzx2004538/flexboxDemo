@@ -29,12 +29,20 @@ class KFC extends React.Component {
                 </div>
                 <div className="menuList">
                     {menuList.map((item) => (
-                        <span className="menuList__item"
+                        <button className="menuList__item"
                                key = {item.key}
                         >
                             {item.mealItem}
-                        </span>
+                        </button>
                     ))}
+                </div>
+                <div className="orderBar">
+                    <div className="orderBar__left">
+                           Your order :
+                    </div>
+                    <div className="orderBar__right">
+                        Select your order
+                    </div>
                 </div>
                 <div className='restaurantList'>
                     <Restaurant menu={menuList} />

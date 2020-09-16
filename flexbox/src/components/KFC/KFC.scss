@@ -8,6 +8,22 @@
     align-self: center;
 }
 
+.orderBar{
+    display:flex;
+    justify-content: center;
+    margin-top:3%;
+
+    &__left{
+        color:rgba($color: #df1414, $alpha: 1.0)
+    }
+
+    &__right{
+       
+        border-bottom:solid 1px;
+        margin-left: 1%;
+    }
+}
+
 .menuList{
     display:flex;
     flex-direction: row;
@@ -19,6 +35,16 @@
     background-color: rgba($color: #db2c15, $alpha: 0.8);
 
     &__item{
-       margin:5px;
+        background-color: transparent;
+        outline: none;
+        border:none;
+        height:100%;
+        width: 30%;
+        margin:5px;
+        color:white;
+
+        &:hover{
+            background-color:rgba($color: #e28c0a, $alpha: 1.0)
+        }
     }
 }
