@@ -15,7 +15,14 @@
 
 .itemVolume{
     margin:auto 5px;
-    color:rgba($color: #439c10, $alpha: 1.0)
+    color:rgba($color: #439c10, $alpha: 1.0);
+
+    &__input{
+        width:30px;
+        text-align: center;
+        outline:none;
+        color:rgba($color: #439c10, $alpha: 1.0);
+    }
 }
 
 
