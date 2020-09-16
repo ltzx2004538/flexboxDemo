@@ -15,6 +15,7 @@ class Restaurant extends React.Component {
             menuBeta: this.props.menu,
         }
         this.handleButtonAlpha = this.handleButtonAlpha.bind(this);
+        this.handleButtonBeta = this.handleButtonBeta.bind(this);
     }
 
 
@@ -28,6 +29,20 @@ class Restaurant extends React.Component {
         }
         this.setState({
             menuAlpha: newMenu,
+        });
+        console.log("length" + this.props.menu.length);
+    }
+
+    handleButtonBeta(soldOutItem){
+        console.log(soldOutItem);
+        let newMenu = this.state.menuBeta;
+        for (let key in newMenu) {
+            if (newMenu[key].key === soldOutItem) {
+                newMenu.splice(key, 1)
+            }
+        }
+        this.setState({
+            menuBeta: newMenu,
         });
         console.log("length" + this.props.menu.length);
     }
@@ -51,8 +66,12 @@ class Restaurant extends React.Component {
                     <span>Beta</span>
                     <div className="restaurant__menu">
                         {menuBeta.map((item) => (
-                            <MenuManager mealItem={item.mealItem} />
+                            <MenuManager mealItem={item.mealItem} 
+                            onClick={()=>this.handleButtonBeta(item.key)}
+                            />
+                            
                         ))}
+
                     </div>
                 </div>
             </div>
