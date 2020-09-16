@@ -1,0 +1,21 @@
+.location{
+    display:flex;
+    align-self: start;
+    flex:1;
+    justify-content: center;
+    //margin-left:37%;
+
+    
+
+    &__input{
+        border:none;
+        outline: none;
+        text-align: center;
+        border-bottom: solid 1px;
+        font-size: medium;
+    }
+    &__label{
+        font-size: medium;
+        text-align: center;
+    }
+}

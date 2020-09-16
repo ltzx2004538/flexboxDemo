@@ -10,7 +10,6 @@ class MenuManager extends React.Component {
     const defaultVolume = this.props.volume;
     this.state = {
       volume: defaultVolume,
-     
       active: false,
     }
 
@@ -38,7 +37,6 @@ class MenuManager extends React.Component {
 
   handleBlur(e) {
     console.log("focus lost");
-    this.toggleInput();
   }
 
   handleFocus(e) {

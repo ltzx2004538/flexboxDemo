@@ -3,11 +3,10 @@ import './OrderItemTag.scss';
 
 
 
-
 const OrderItemTag = (props) => (
     <div className='itemTag'>
         <div className='itemTag__Item'>
-            {props.mealItem}
+            <span> {props.mealItem} </span>    
         </div>
         <div className='itemTag__volume'>
             x {props.volume}

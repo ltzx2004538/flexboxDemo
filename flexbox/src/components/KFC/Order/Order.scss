@@ -23,32 +23,43 @@
 
 .orderBar{
     display:flex;
-    justify-content: flex-end;
-    
     margin-top:3%;
     margin-right:6%;
+    justify-content: center;
+    
+
+    &__location{
+        display: flex;
+        flex:1; 
+        
+    }
 
     //width:100%;
-
-    &__left{
-        position: relative;
+    &__payment{
         display:flex;
-        flex-direction: column;
-        color:rgba($color: #df1414, $alpha: 1.0);
-        
-
-        &__total{
-          position: absolute;
-          bottom:0;
-          right:0;
-          display: flex;
-          justify-content: flex-end; 
+        justify-content: flex-end;
+        flex:1;
+        //background-color: red;
+        &__left{
+            position: relative;
+            display:flex;
+            flex-direction: column;
+            color:rgba($color: #df1414, $alpha: 1.0);
+            
+            &__total{
+              position: absolute;
+              bottom:0;
+              right:0;
+              display: flex;
+              justify-content: flex-end; 
+            }
+        }
+    
+        &__right{
+            margin-left: 1%;      
         }
     }
-
-    &__right{
-        margin-left: 1%;
-    }
+   
 }
 
 .checkout{
@@ -58,6 +69,5 @@
         display: flex;
         justify-content: flex-end;
         border-top:solid 1px;
-
     }
 }

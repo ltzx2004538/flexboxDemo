@@ -2,6 +2,7 @@ import React from 'react';
 import OrderMenu from './components/OrderMenu';
 import OrderItemTag from './components/OrderItemTag';
 import Meal from '../../../js/Meal';
+import OrderLocation from './components/OrderLocation';
 import Calculator from '../../../js/Calculator';
 import './Order.scss';
 
@@ -26,10 +27,10 @@ class Order extends React.Component {
             orderList: updateOrderList,
             totalPrice: updateTotalPrice
         })
-        this.displayOrder();
+        this.displayOrderList();
     }
 
-    displayOrder() {
+    displayOrderList() {
         if (this.state.orderList.length !== 0)
             this.setState({
                 active: true
@@ -64,37 +65,43 @@ class Order extends React.Component {
                     onClick={this.onClickMenuButton}
                 />
                 <div className="orderBar">
-                    <div className="orderBar__left">
-                        <div className='orderBar__left__label'>
-                            Your order :
+
+                    <OrderLocation />
+    
+                    <div className='orderBar__payment'>
+                        <div className="orderBar__payment__left">
+                            <div className='orderBar__payment__left__label'>
+                                Your order :
                         </div>
-                        {active ?
-                            <div className='orderBar__left__total'>
-                                Total:
+                            {active ?
+                                <div className='orderBar__payment__left__total'>
+                                    Total:
                              </div>
-                            :
-                            ''
-                        }
-                    </div>
-                    <div className="orderBar__right">
-                        {active ?
-                            <div className='checkout'>
-                                {orderList.map((item) => (
-                                    <OrderItemTag
-                                        key={item.key}
-                                        mealItem={item.mealItem}
-                                        volume={item.volume}
-                                        price={item.price} />
-                                ))}
-                                <div className='checkout__total'>
-                                    ${totalPrice}
+                                :
+                                ''
+                            }
+                        </div>
+                        <div className="orderBar__payment__right">
+                            {active ?
+                                <div className='checkout'>
+                                    {orderList.map((item) => (
+                                        <OrderItemTag
+                                            key={item.key}
+                                            mealItem={item.mealItem}
+                                            volume={item.volume}
+                                            price={item.price} />
+                                    ))}
+                                    <div className='checkout__total'>
+                                        ${totalPrice}
+                                    </div>
                                 </div>
-                            </div>
-                            :
-                            <div>
-                                {defaultValue}
-                            </div>
-                        }
+                                :
+                                <div>
+                                    {defaultValue}
+                                </div>
+                            }
+                        </div>
+
                     </div>
                 </div>
             </div>

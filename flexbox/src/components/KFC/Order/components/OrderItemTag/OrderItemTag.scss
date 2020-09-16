@@ -3,18 +3,24 @@
     justify-content: flex-end;
     align-self: center;
     margin-bottom: 4%;
-    
-    
-    
 
     &__Item{
+        display:flex;
+        justify-self: flex-start;
+    }
+
+    &__price{
+        display:flex;
+        justify-content: flex-end;
         align-self: center;
-        margin:auto 4px;
+       
     }
 
     &__volume{
+        display:flex;
+        justify-content: flex-end;
         align-self: center;
-        margin:auto 4px;
+        margin:auto 20px;
         color:rgba($color: #439c10, $alpha: 1.0);     
     }
 
