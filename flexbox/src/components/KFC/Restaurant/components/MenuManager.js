@@ -7,9 +7,10 @@ import "./MenuManager.scss";
 class MenuManager extends React.Component {
   constructor(props) {
     super(props);
+    const defaultVolume = this.props.volume;
     this.state = {
-      volume: this.props.volume,
-      default: this.props.volume,
+      volume: defaultVolume,
+     
       active: false,
     }
 
@@ -36,13 +37,8 @@ class MenuManager extends React.Component {
   }
 
   handleBlur(e) {
-    setTimeout(() => {
-      if (this.state.active) {
-        this.setState({
-          active: false,
-        });
-      }
-    }, 100);
+    console.log("focus lost");
+    this.toggleInput();
   }
 
   handleFocus(e) {
@@ -54,10 +50,11 @@ class MenuManager extends React.Component {
     this.setState({
       active: !this.state.active,
     });
+    console.log("trigger active" + this.state.active);
   }
 
   render() {
-    const { volume, defaultVolume, active } = this.state;
+    const {volume, active} = this.state;
     return (
       <div className="menuWrapper">
         <div className="menuLabel">

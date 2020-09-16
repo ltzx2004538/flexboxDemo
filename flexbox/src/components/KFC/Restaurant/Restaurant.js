@@ -1,11 +1,6 @@
 import React from 'react';
 import MenuManager from './components/MenuManager';
 import './Restaurant.scss';
-import RestaurantManage from './components/MenuManager';
-
-
-
-
 
 class Restaurant extends React.Component {
     constructor(props) {
@@ -20,7 +15,7 @@ class Restaurant extends React.Component {
     }
 
 
-    handleSoldOutButtonAlpha(soldOutItem){
+    handleSoldOutButtonAlpha(soldOutItem) {
         console.log(soldOutItem);
         let newMenu = this.state.menuAlpha;
         for (let key in newMenu) {
@@ -34,14 +29,14 @@ class Restaurant extends React.Component {
         console.log("length" + this.props.menu.length);
     }
 
-    onVolumeChange(itemKey,inputVolume){
-        console.log("volue"+ inputVolume);
-        console.log("key"+ itemKey);
+    onVolumeChange(itemKey, inputVolume) {
+        console.log("volue" + inputVolume);
+        console.log("key" + itemKey);
         let newMenu = this.state.menuAlpha;
         for (let key in newMenu) {
             if (newMenu[key].key === itemKey) {
                 newMenu[key].volume = inputVolume;
-                console.log( "new value" + newMenu[key].volume);
+                console.log("new value" + newMenu[key].volume);
             }
         }
         this.setState({
@@ -49,7 +44,7 @@ class Restaurant extends React.Component {
         });
     }
 
-    handleSoldOutButtonBeta(soldOutItem){
+    handleSoldOutButtonBeta(soldOutItem) {
         console.log(soldOutItem);
         let newMenu = this.state.menuBeta;
         for (let key in newMenu) {
@@ -68,26 +63,35 @@ class Restaurant extends React.Component {
         return (
             <div className="restaurantList">
                 <div className="restaurant">
-                    <span> Restaurant Alpha</span>
+                    <div className='restaurant__name'>
+                        Restaurant Alpha
+                     </div>
                     <div className="restaurant__menu">
                         {menuAlpha.map((item) => (
-                            <MenuManager itemKey={item.key}
-                                         mealItem={item.mealItem} 
-                                         volume={item.volume}
-                                         onClickSoldOut={()=>this.handleSoldOutButtonAlpha(item.key)}  
-                                         onVolumeChange = {this.onVolumeChange}   
+                            <MenuManager
+                                key={item.key}
+                                itemKey={item.key}
+                                mealItem={item.mealItem}
+                                volume={item.volume}
+                                onClickSoldOut={() => this.handleSoldOutButtonAlpha(item.key)}
+                                onVolumeChange={this.onVolumeChange}
                             />
                         ))}
                     </div>
                 </div>
                 <div className="restaurant">
-                    <span>Restaurant Beta</span>
+                <div className='restaurant__name'>
+                        Restaurant Beta
+                     </div>
                     <div className="restaurant__menu">
                         {menuBeta.map((item) => (
-                            <MenuManager mealItem={item.mealItem} 
-                            volume={item.volume}
-                            onClick={()=>this.handleSoldOutButtonBeta(item.key)}
-                            />    
+
+                            <MenuManager
+                                key={item.key}
+                                mealItem={item.mealItem}
+                                volume={item.volume}
+                                onClick={() => this.handleSoldOutButtonBeta(item.key)}
+                            />
                         ))}
                     </div>
                 </div>

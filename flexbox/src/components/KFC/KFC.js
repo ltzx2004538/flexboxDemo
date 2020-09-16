@@ -24,12 +24,14 @@ class KFC extends React.Component {
         const { menuList } = this.state;
         return (
             <div className='container'>
-                <div>
-                <span>KFC Menu</span>
+                <div className = 'title'>
+                    KFC Menu
                 </div>
                 <div className="menuList">
                     {menuList.map((item) => (
-                        <span className="menuList__item">
+                        <span className="menuList__item"
+                               key = {item.key}
+                        >
                             {item.mealItem}
                         </span>
                     ))}

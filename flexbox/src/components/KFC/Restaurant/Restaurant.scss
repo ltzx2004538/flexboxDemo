@@ -6,21 +6,25 @@
 }
 
 .restaurant{
+    display:flex;
+    flex-direction: column;
     flex:1;
     margin-top:2%;
+    justify-content: center;
+
+    &__name{
+        align-self: center;
+        justify-content: center;
+        color:red;
+        margin: 1% auto;
+    }
 
     &__menu{
         display:flex;
+        flex:1;
         justify-content: center;
-        flex-direction: row;
-        margin: 1% auto;
+        //margin: 2% auto;
         
     }
 }
 
-.menuManager{
-    display:flex;
-    flex-direction: row;
-    margin: auto 5%;
-    background-color: rgba($color: #eedf14, $alpha: 1.0);
-}
