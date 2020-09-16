@@ -1,13 +1,20 @@
 .itemTag{
     display:flex;
     justify-content: flex-end;
-    margin:4% auto;
+    align-self: center;
+    margin-bottom: 4%;
+    
+    
+    
 
     &__Item{
+        align-self: center;
         margin:auto 4px;
     }
 
     &__volume{
+        align-self: center;
+        margin:auto 4px;
         color:rgba($color: #439c10, $alpha: 1.0);     
     }
 

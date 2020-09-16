@@ -24,19 +24,40 @@
 .orderBar{
     display:flex;
     justify-content: flex-end;
+    
     margin-top:3%;
     margin-right:6%;
 
     //width:100%;
 
     &__left{
-        color:rgba($color: #df1414, $alpha: 1.0)
+        position: relative;
+        display:flex;
+        flex-direction: column;
+        color:rgba($color: #df1414, $alpha: 1.0);
+        
+
+        &__total{
+          position: absolute;
+          bottom:0;
+          right:0;
+          display: flex;
+          justify-content: flex-end; 
+        }
     }
 
     &__right{
-        display:inline-block;
-        align-items: flex-end;
-        border-bottom:solid 1px;
         margin-left: 1%;
+    }
+}
+
+.checkout{
+    display:inline-block;
+    
+    &__total{
+        display: flex;
+        justify-content: flex-end;
+        border-top:solid 1px;
+
     }
 }

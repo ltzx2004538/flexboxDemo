@@ -10,7 +10,10 @@ const OrderItemTag = (props) => (
             {props.mealItem}
         </div>
         <div className='itemTag__volume'>
-            {props.volume}
+            x {props.volume}
+        </div>
+        <div className='itemTag__price'>
+            ${props.price}
         </div>
     </div>
 )

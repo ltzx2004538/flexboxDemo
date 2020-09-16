@@ -10,11 +10,11 @@ class KFC extends React.Component {
     constructor(props) {
         super(props);
         const menuList = [
-            { key: 0, menuItem: 'Hamburger', volume: 99 },
-            { key: 1, menuItem: 'Wicked Wings',volume: 99},
-            { key: 2, menuItem: 'Nuggests',volume: 99 },
-            { key: 3, menuItem: 'Fries',volume: 99 },
-            { key: 4, menuItem: 'Coke',volume: 99 }
+            { key: 0, menuItem: 'Hamburger', price:10,volume: 99 },
+            { key: 1, menuItem: 'Wicked Wings',price:2,volume: 99},
+            { key: 2, menuItem: 'Nuggests',price:6,volume: 99 },
+            { key: 3, menuItem: 'Fries',price:3,volume: 99 },
+            { key: 4, menuItem: 'Coke',price:2,volume: 99 }
         ]
         this.state = {
             menuList,

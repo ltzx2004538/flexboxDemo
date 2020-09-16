@@ -15,7 +15,7 @@ const OrderMenu = ({
                 key={item.key}
                 onClick={() => onClick(item.key)}
             >
-                {item.menuItem}
+                {item.menuItem}: ${item.price}
             </button>
         ))}
     </div>
