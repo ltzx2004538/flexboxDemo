@@ -13,7 +13,7 @@ class Main extends React.Component{
     }
 
     render(){
-        const {menuList} = this.state;
+       
         return(
             <div className='container'>
                 <KFC/>
