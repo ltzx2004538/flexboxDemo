@@ -90,6 +90,7 @@ class Restaurant extends React.Component {
                                 menuItem={item.menuItem}
                                 volume={item.volume}
                                 onClick={() => this.handleSoldOutButtonBeta(item.key)}
+                                onVolumeChange={this.onVolumeChange}
                             />
                         ))}
                     </div>

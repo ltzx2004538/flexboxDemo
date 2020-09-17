@@ -1,25 +1,14 @@
-.menuList{
+.title{
     display:flex;
-    flex-direction: row;
-    color:white;
     width:100%;
+    justify-content: center;
+    align-self: center;
+    color:white;
     background-color: rgba($color: #db2c15, $alpha: 0.8);
-
-    &__item{
-        background-color: transparent;
-        outline: none;
-        border:none;
-        height:100%;
-        width: 30%;
-        margin:5px;
-        font-weight: bold;
-        color:white;
-
-        &:hover{
-            background-color:rgba($color: #e28c0a, $alpha: 1.0)
-        }
-    }
+    font-weight: bold;
+    font-size:x-large;   
 }
+
 
 .orderBar{
     display:flex;
@@ -63,8 +52,8 @@
 }
 
 .checkout{
-    display:inline-block;
-    
+    display:flex;
+    flex-direction: column;
     &__total{
         display: flex;
         justify-content: flex-end;

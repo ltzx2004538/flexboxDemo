@@ -1,28 +1,27 @@
 .itemTag{
-    display:flex;
-    justify-content: flex-end;
-    align-self: center;
-    margin-bottom: 4%;
-
-    &__Item{
-        display:flex;
-        justify-self: flex-start;
+    // margin-bottom: 4%;
+    // min-width: 200px;
+    //background-color: rgba($color: #a9c40f, $alpha: 1.0);
+    
+    &__box{
+        width:30%;
+        float:left;
+       
+        
     }
 
-    &__price{
-        display:flex;
-        justify-content: flex-end;
-        align-self: center;
+    &__Item{
+       
        
     }
 
     &__volume{
-        display:flex;
-        justify-content: flex-end;
-        align-self: center;
-        margin:auto 20px;
-        color:rgba($color: #439c10, $alpha: 1.0);     
+       
+        
+        color:rgba($color: #439c10, $alpha: 1.0);    
     }
 
-
+    &__price{
+       
+    }
 }
