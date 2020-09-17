@@ -1,6 +1,6 @@
 import React from 'react';
 import OrderMenu from './components/OrderMenu';
-import OrderItemTag from './components/OrderItemTag';
+import Checkout from'./components/Checkout';
 import Meal from '../../../js/Meal';
 import OrderLocation from './components/OrderLocation';
 import Calculator from '../../../js/Calculator';
@@ -65,44 +65,12 @@ class Order extends React.Component {
                     onClick={this.onClickMenuButton}
                 />
                 <div className="orderBar">
-
                     <OrderLocation />
-    
-                    <div className='orderBar__payment'>
-                        <div className="orderBar__payment__left">
-                            <div className='orderBar__payment__left__label'>
-                                Your order :
-                        </div>
-                            {active ?
-                                <div className='orderBar__payment__left__total'>
-                                    Total:
-                             </div>
-                                :
-                                ''
-                            }
-                        </div>
-                        <div className="orderBar__payment__right">
-                            {active ?
-                                <div className='checkout'>
-                                    {orderList.map((item) => (
-                                        <OrderItemTag
-                                            key={item.key}
-                                            mealItem={item.mealItem}
-                                            volume={item.volume}
-                                            price={item.price} />
-                                    ))}
-                                    <div className='checkout__total'>
-                                        ${totalPrice}
-                                    </div>
-                                </div>
-                                :
-                                <div>
-                                    {defaultValue}
-                                </div>
-                            }
-                        </div>
-
-                    </div>
+                    <Checkout active={active}
+                              orderList={orderList}
+                              defaultValue={defaultValue}
+                              totalPrice={totalPrice}
+                    />
                 </div>
             </div>
         );

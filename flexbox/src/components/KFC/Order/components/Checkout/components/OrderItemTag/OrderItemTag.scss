@@ -1,0 +1,19 @@
+.itemTag {
+    display: flex;
+
+    &__Item {
+        width:50%;
+    }
+
+    &__volume {
+        display:flex;
+        flex-grow: 1;
+        // width:33%;
+        //justify-content: flex-start;
+        color: rgba($color: #439c10, $alpha: 1.0);
+    }
+
+    &__price {
+        align-self: flex-end;
+    }
+}

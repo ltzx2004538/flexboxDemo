@@ -5,13 +5,13 @@ import './OrderItemTag.scss';
 
 const OrderItemTag = (props) => (
     <div className='itemTag'>
-        <div className='itemTag__Item itemTag__box'>
+        <div className='itemTag__Item'>
             <span> {props.mealItem} </span>
         </div>
-        <div className='itemTag__volume itemTag__box'>
+        <div className='itemTag__volume'>
                 <span> x {props.volume} </span>
             </div>
-        <div className='itemTag__price itemTag__box'>
+        <div className='itemTag__price'>
             <span>${props.price} </span>
         </div>
     </div>
