@@ -7,6 +7,12 @@ import './OrderLocation.scss';
 class Orderlocation extends React.Component {
     constructor(props) {
         super(props);
+        this.options = [
+            { value: 'chocolate', label: 'Chocolate' },
+            { value: 'strawberry', label: 'Strawberry' },
+            { value: 'vanilla', label: 'Vanilla' }
+          ]
+          
         this.defaultText = 'input your location';
         this.locationInput = React.createRef();
         this.state = {
@@ -83,6 +89,7 @@ class Orderlocation extends React.Component {
                         {currentLocation}
                     </div>
                 }
+                
             </div>
         )
     }

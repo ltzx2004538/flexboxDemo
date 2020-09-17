@@ -65,7 +65,7 @@ class Order extends React.Component {
                     onClick={this.onClickMenuButton}
                 />
                 <div className="orderBar">
-                    <OrderLocation />
+                    <OrderLocation restaurantList = {this.props.restaurantList}/>
                     <Checkout active={active}
                               orderList={orderList}
                               defaultValue={defaultValue}

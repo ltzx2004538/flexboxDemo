@@ -14,29 +14,33 @@ import WickedWings from '../../img/wicked-wings.jpg';
 class KFC extends React.Component {
     constructor(props) {
         super(props);
-        const menuList = [
+        this.menuList = [
             { key: 0, menuItem: 'Burger', price:5,volume: 99,pic:Burger},
             { key: 1, menuItem: 'Wicked Wings',price:2,volume: 99,pic:WickedWings},
             { key: 2, menuItem: 'Nuggests',price:6,volume: 99,pic:Nuggets},
             { key: 3, menuItem: 'Fries',price:3,volume: 99,pic:Fries},
             { key: 4, menuItem: 'Coke',price:2,volume: 99,pic:Coke}
         ]
+        this.restaurantList = [
+            {key:0, name:'Alpha',address:'100 Abc Street',suburb:'Sydney',state:'NSW'},
+            {key:1, name:'Beta',address:'200 Bbc Street',suburb:'Melbourne',state:'VIC'}
+        ]
         this.state = {
-            menuList,
             orderList:[],
-        }
-        
+        }  
     }
 
 
     render() {
-        const { menuList } = this.state;
+        
         return (
             <div className='container'>
-                <Order menuList = {menuList}               
+                <Order menuList = {this.menuList}  
+                       restaurantList = {this.restaurantList}             
                 />
                 <div className='restaurantList'>
-                    <Restaurant menu={menuList} />
+                    <Restaurant menu={this.menuList}
+                    />
                 </div>
             </div>
         )
