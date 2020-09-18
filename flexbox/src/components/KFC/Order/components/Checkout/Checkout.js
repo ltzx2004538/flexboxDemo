@@ -10,11 +10,11 @@ const Checkout = (props) => (
         <div className="checkout__left">
             <div className='checkout__left__label'>
                 Your order :
+            </div>
+        {props.active ?
+             <div className='checkout__left__total'>
+                 Total:
              </div>
-            {props.active ?
-                <div className='checkout__left__total'>
-                    Total:
-                 </div>
                 :
                 ''
             }

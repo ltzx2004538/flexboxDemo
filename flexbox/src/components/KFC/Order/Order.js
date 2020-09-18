@@ -1,6 +1,6 @@
 import React from 'react';
 import OrderMenu from './components/OrderMenu';
-import Checkout from'./components/Checkout';
+import Checkout from './components/Checkout';
 import Meal from '../../../js/Meal';
 import OrderLocation from './components/OrderLocation';
 import Calculator from '../../../js/Calculator';
@@ -45,21 +45,21 @@ class Order extends React.Component {
         const meal = new Meal(
             selectedItemKey,
             this.props.menuList[selectedItemKey].menuItem,
-            1, 
+            1,
             this.props.menuList[selectedItemKey].price)
         checkList.push(meal);
         return checkList;
     }
 
 
-    checkLocation(selected){
-       if(selected){
-           this.setState({
-               disableBtn:false,
-           })
-           console.log("unlock the btn");
-       }
-       console.log("order"+this.state.disableBtn);
+    checkLocation(selected) {
+        if (selected) {
+            this.setState({
+                disableBtn: false,
+            })
+            console.log("unlock the btn");
+        }
+        console.log("order" + this.state.disableBtn);
     }
 
     displayOrderList() {
@@ -70,27 +70,36 @@ class Order extends React.Component {
     }
 
     render() {
-        const { defaultValue, orderList, active, totalPrice,disableBtn} = this.state;
+        const { defaultValue, orderList, active, totalPrice, disableBtn } = this.state;
         return (
             <div>
                 <div className='title'>
                     KFC Menu
                 </div>
                 <OrderMenu menuList={this.props.menuList}
-                           disableBtn = {disableBtn}
-                           onClick={this.onClickMenuButton}
+                    disableBtn={disableBtn}
+                    onClick={this.onClickMenuButton}
                 />
                 <div className="orderBar">
-                    <OrderLocation restaurantList = {this.props.restaurantList}
-                                   checkLocation = {this.checkLocation}
+                    <OrderLocation restaurantList={this.props.restaurantList}
+                        checkLocation={this.checkLocation}
                     />
-                                  
+
                     <Checkout active={active}
-                              orderList={orderList}
-                              defaultValue={defaultValue}
-                              totalPrice={totalPrice}
+                        orderList={orderList}
+                        defaultValue={defaultValue}
+                        totalPrice={totalPrice}
                     />
                 </div>
+                {active ?
+                    <div className='paymentBar'>
+                        <button className='paymentBar__btn'>
+                            Checkout
+                </button>
+                    </div>
+                    :
+                    ''
+                }
             </div>
         );
     }
