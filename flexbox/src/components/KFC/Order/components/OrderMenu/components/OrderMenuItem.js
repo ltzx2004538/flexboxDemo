@@ -5,8 +5,17 @@ import './OrderMenuItem.scss';
 
 const OrderMenuItem = ({
     item,
-    onClick
-}) => (
+    disableBtn,
+    onClick,
+}) => {
+    let btnClassName = "orderBtn";
+
+    if(!disableBtn){
+        console.log("Menu "+ disableBtn);
+        btnClassName += ' orderBtn--active';
+    }
+
+    return (
         <div className='menuList__item'>
             <div className='menuList__item__picContainer'>
                 <img className='menuList__item__picContainer__menupic'
@@ -17,15 +26,18 @@ const OrderMenuItem = ({
                     {item.menuItem}: ${item.price}
                 </div>
                 <div className="menuList__item__detail__order">
-                    <button className="menuList__item__detail__order__btn"
+                    <button 
+                        disabled={disableBtn}
+                        className={btnClassName}
                         key={item.key}
                         onClick={() => onClick(item.key)}
                     >
                         Order
-            </button>
+                    </button>
                 </div>
             </div>
         </div>
     )
+}
 
 export default OrderMenuItem;

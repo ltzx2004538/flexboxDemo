@@ -42,9 +42,15 @@ class Orderlocation extends React.Component {
         });
     }
 
-    handleOnchange(newValue,actionMeta) {
-        console.log(newValue.value);
-        console.log(actionMeta.action);
+    handleOnchange(newValue, actionMeta) {
+        console.log(newValue.label);
+        this.setState({
+            currentLocation: newValue.label,
+        })
+        if(this.state.currentLocation != this.defaultText){
+            this.props.checkLocation(true);
+         }
+        this.toggleInput();
     }
 
     componentWillMount() {
@@ -55,17 +61,17 @@ class Orderlocation extends React.Component {
         const { locationOptions, currentLocation, active } = this.state;
         return (
             <div className='location'>
-                <div className='location__label' onClick={this.toggleInput}>
-                    {currentLocation}
-                </div>
                 {active ?
                     <Select className="location__select"
+                        placeholder = {currentLocation}
                         onChange={this.handleOnchange}
                         options={locationOptions}
-                        isSearchable={true} 
+                        isSearchable={true}
                     />
                     :
-                    ''
+                    <div className='location__label' onClick={this.toggleInput}>
+                        {currentLocation}
+                    </div>
                 }
             </div>
         )

@@ -15,9 +15,11 @@ class Order extends React.Component {
             defaultValue,
             orderList: [],
             totalPrice: 0,
-            active: false
+            active: false,
+            disableBtn: true,
         }
         this.onClickMenuButton = this.onClickMenuButton.bind(this);
+        this.checkLocation = this.checkLocation.bind(this);
     }
 
     onClickMenuButton(selectedItemKey) {
@@ -28,6 +30,16 @@ class Order extends React.Component {
             totalPrice: updateTotalPrice
         })
         this.displayOrderList();
+    }
+
+    checkLocation(selected){
+       if(selected){
+           this.setState({
+               disableBtn:false,
+           })
+           console.log("unlock the btn");
+       }
+       console.log("order"+this.state.disableBtn);
     }
 
     displayOrderList() {
@@ -55,17 +67,21 @@ class Order extends React.Component {
     }
 
     render() {
-        const { defaultValue, orderList, active, totalPrice } = this.state;
+        const { defaultValue, orderList, active, totalPrice,disableBtn} = this.state;
         return (
             <div>
                 <div className='title'>
                     KFC Menu
                 </div>
                 <OrderMenu menuList={this.props.menuList}
-                    onClick={this.onClickMenuButton}
+                           disableBtn = {disableBtn}
+                           onClick={this.onClickMenuButton}
                 />
                 <div className="orderBar">
-                    <OrderLocation restaurantList = {this.props.restaurantList}/>
+                    <OrderLocation restaurantList = {this.props.restaurantList}
+                                   checkLocation = {this.checkLocation}
+                    />
+                                  
                     <Checkout active={active}
                               orderList={orderList}
                               defaultValue={defaultValue}

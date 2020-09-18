@@ -50,20 +50,30 @@
                 justify-content: center;
                 margin: 2% auto;
                 //background-color: rgba($color: #db2c15, $alpha: 0.8);
-
-                &__btn {
-                    outline: none;
-                    border: solid 1px white;
-                    border-radius: 10px;
-                    font-weight: bold;
-                    background-color: transparent;
-                    color: white;
-
-                    &:hover {
-                        background-color: rgba($color: #e28c0a, $alpha: 1.0)
-                    }
-                }
             }
         }
     }
+}
+
+.orderBtn{
+    border:none;
+    outline: none;
+    color:white;
+    font-weight: bold;
+    background-color: rgba($color: #d3c8c8, $alpha: 0.9);
+    border-radius: 10px;
+
+    &--active{
+        outline: none;
+        border: solid 1px white;
+        border-radius: 10px;
+        font-weight: bold;
+        background-color: transparent;
+        color: white;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba($color: #e28c0a, $alpha: 1.0)
+        }
+    }      
 }
