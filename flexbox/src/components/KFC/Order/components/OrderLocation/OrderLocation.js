@@ -33,7 +33,7 @@ class Orderlocation extends React.Component {
             locationOptions: locations,
         })
         this.toggleInput = this.toggleInput.bind(this);
-        this.handleOnchange = this.handleOnchange(this);
+        this.handleOnchange = this.handleOnchange.bind(this);
     }
 
     toggleInput() {
@@ -42,9 +42,9 @@ class Orderlocation extends React.Component {
         });
     }
 
-    handleOnchange(option,action) {
-        console.log(option.value);
-        //console.log(action.action);
+    handleOnchange(newValue,actionMeta) {
+        console.log(newValue.value);
+        console.log(actionMeta.action);
     }
 
     componentWillMount() {
@@ -60,9 +60,9 @@ class Orderlocation extends React.Component {
                 </div>
                 {active ?
                     <Select className="location__select"
-                        options={locationOptions}
-                        isSearchable={true}
                         onChange={this.handleOnchange}
+                        options={locationOptions}
+                        isSearchable={true} 
                     />
                     :
                     ''
