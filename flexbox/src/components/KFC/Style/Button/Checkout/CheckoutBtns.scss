@@ -1,0 +1,37 @@
+.checkoutBtn {
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    background-color: rgba($color: #d31414, $alpha: 1.0);
+    width: 10%;
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0px 0px 10px -3px rgba(0, 0, 0, 0.75);
+
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+
+}
+
+.cancelBtn {
+    border: solid 1px rgba($color: #9b9797, $alpha: 0.7);
+    border-radius: 10px;
+    outline: none;
+    color: rgba($color: #d31414, $alpha: 1.0);
+    font-weight: bold;
+    background-color: white;
+    width: 10%;
+    &:hover {
+        opacity: 0.9;
+        box-shadow: 0px 0px 6px -3px rgba(0, 0, 0, 0.75);
+
+    }
+    &:active {
+        transform: scale(1.1);
+    }
+
+}

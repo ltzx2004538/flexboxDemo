@@ -4,6 +4,7 @@ import Checkout from './components/Checkout';
 import Meal from '../../../js/Meal';
 import OrderLocation from './components/OrderLocation';
 import Calculator from '../../../js/Calculator';
+import CheckoutBtns from '../Style/Button/Checkout/CheckoutBtns';
 import './Order.scss';
 
 
@@ -20,6 +21,7 @@ class Order extends React.Component {
         }
         this.onClickMenuButton = this.onClickMenuButton.bind(this);
         this.checkLocation = this.checkLocation.bind(this);
+        this.onClickCancelBtn = this.onClickCancelBtn.bind(this);
     }
 
     onClickMenuButton(selectedItemKey) {
@@ -51,6 +53,12 @@ class Order extends React.Component {
         return checkList;
     }
 
+    onClickCancelBtn() {
+        this.setState({
+            orderList: [],
+            active: false,
+        })
+    }
 
     checkLocation(selected) {
         if (selected) {
@@ -93,9 +101,11 @@ class Order extends React.Component {
                 </div>
                 {active ?
                     <div className='paymentBar'>
-                        <button className='paymentBar__btn'>
-                            Checkout
-                </button>
+                        <CheckoutBtns.CheckoutBtn text='Checkout' />
+                        <div className="paymentBar__blank" />
+                        <CheckoutBtns.CancelBtn
+                            onClick={this.onClickCancelBtn}
+                            text='Cancel' />
                     </div>
                     :
                     ''
