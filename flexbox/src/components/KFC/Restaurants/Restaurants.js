@@ -2,7 +2,16 @@ import React from 'react';
 import MenuManager from './components/MenuManager';
 import './Restaurant.scss';
 
-class Restaurant extends React.Component {
+
+//紧急情况说明
+//认证盛情表
+//护照
+//澳大利亚签证
+//ren zheng we pdf
+//zjls0707@gmail.com
+
+
+class Restaurants extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -100,4 +109,4 @@ class Restaurant extends React.Component {
     }
 }
 
-export default Restaurant;
+export default Restaurants;
