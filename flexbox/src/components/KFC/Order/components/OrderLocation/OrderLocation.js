@@ -1,4 +1,6 @@
 import React from 'react';
+import Select from 'react-select';
+import Location from '../../../../../js/Location';
 import './OrderLocation.scss';
 
 
@@ -7,24 +9,31 @@ import './OrderLocation.scss';
 class Orderlocation extends React.Component {
     constructor(props) {
         super(props);
-        this.options = [
-            { value: 'chocolate', label: 'Chocolate' },
-            { value: 'strawberry', label: 'Strawberry' },
-            { value: 'vanilla', label: 'Vanilla' }
-          ]
-          
         this.defaultText = 'input your location';
-        this.locationInput = React.createRef();
         this.state = {
             currentLocation: this.defaultText,
             active: false,
+            stateOptions: [],
+            locationOptions: [],
+            currentLocation: 'Please select a restaurant...',
         }
-        this.handleOnchange = this.handleOnchange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleOnFocus = this.handleOnFocus.bind(this);
-        this.handleOnBlur = this.handleOnBlur.bind(this);
+    }
+
+    createLocations() {
+        let label = '';
+        let value = 0;
+        let locations = [];
+        for (let i in this.props.restaurantList) {
+            label = `${this.props.restaurantList[i].name} ${this.props.restaurantList[i].address} ${this.props.restaurantList[i].suburb}`;
+            const location = new Location.Location(value, label);
+            locations.push(location);
+            value += 1;
+        }
+        this.setState({
+            locationOptions: locations,
+        })
         this.toggleInput = this.toggleInput.bind(this);
-        this.getFocus = this.getFocus.bind(this);
+        this.handleOnchange = this.handleOnchange(this);
     }
 
     toggleInput() {
@@ -33,63 +42,31 @@ class Orderlocation extends React.Component {
         });
     }
 
-    getFocus(){
-        this.locationInput.current.focus(); 
-        this.toggleInput();
+    handleOnchange(option,action) {
+        console.log(option.value);
+        //console.log(action.action);
     }
 
-    handleOnchange(e) {
-        this.updateDisplay(e.target.value);
+    componentWillMount() {
+        this.createLocations();
     }
-
-    handleSubmit(e) {
-        e.preventDefault();
-        this.toggleInput();
-    }
-
-    handleOnFocus(e) {
-        if (this.state.currentLocation === this.defaultValue) {
-            this.updateDisplay('');
-        }
-    }
-
-    handleOnBlur(e) {
-        if (this.state.currentLocation === '') {
-            this.updateDisplay(this.defaultValue);
-            console.log("updated");
-        }
-        this.toggleInput();
-    }
-
-    updateDisplay(inputValue) {
-        this.setState({
-            currentLocation: inputValue,
-        });
-    }
-
-
 
     render() {
-        const { active, currentLocation } = this.state;
+        const { locationOptions, currentLocation, active } = this.state;
         return (
             <div className='location'>
+                <div className='location__label' onClick={this.toggleInput}>
+                    {currentLocation}
+                </div>
                 {active ?
-                    <form className='location__form'
-                          onSubmit={this.handleSubmit}
-                    >
-                        <input ref={this.locationInput} className='location__input'
-                            onChange={this.handleOnchange}
-                            onFocus={this.handleOnFocus}
-                            onBlur={this.handleOnBlur}
-                            value={currentLocation}
-                        />
-                    </form>
+                    <Select className="location__select"
+                        options={locationOptions}
+                        isSearchable={true}
+                        onChange={this.handleOnchange}
+                    />
                     :
-                    <div className='location__label'onClick = {this.toggleInput}>
-                        {currentLocation}
-                    </div>
+                    ''
                 }
-                
             </div>
         )
     }

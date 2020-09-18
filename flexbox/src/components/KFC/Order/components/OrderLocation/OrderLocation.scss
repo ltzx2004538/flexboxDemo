@@ -1,21 +1,29 @@
 .location{
     display:flex;
-    align-self: start;
+    flex-direction: column;
     flex:1;
-    justify-content: center;
-    //margin-left:37%;
-
     
-
-    &__input{
-        border:none;
-        outline: none;
-        text-align: center;
-        border-bottom: solid 1px;
-        font-size: medium;
-    }
     &__label{
-        font-size: medium;
-        text-align: center;
+        align-self: center;
+    }
+    &__select{
+        width: 40%;
+        border:0;
+        align-self: center;
+        font-size: small;
     }
 }
+
+.groupStyles{
+    background-color: '#EBECF0';
+    border-radius: '2em';
+    color: '#172B4D';
+    display: 'inline-block';
+    font-size: 12;
+    font-weight: 'normal';
+    line-height: '1';
+    min-width: 1;
+    padding: '0.16666666666667em 0.5em';
+    text-align: 'center';
+}
+
