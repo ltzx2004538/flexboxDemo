@@ -72,8 +72,11 @@
         color: white;
         cursor: pointer;
 
-        &:hover {
-            background-color: rgba($color: #e28c0a, $alpha: 1.0)
+        &:hover{
+            opacity: 0.8;
+        }
+        &:active{
+            transform: scale(1.1);   
         }
     }      
 }
