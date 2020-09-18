@@ -32,6 +32,26 @@ class Order extends React.Component {
         this.displayOrderList();
     }
 
+    checkDuplicateItem(selectedItemKey) {
+        const checkList = this.state.orderList;
+        const singlePrice = this.props.menuList[selectedItemKey].price;
+        for (let item in checkList) {
+            if (checkList[item].key === selectedItemKey) {
+                checkList[item].volume += 1;
+                checkList[item].price = Calculator.multiItemsPrice(singlePrice, checkList[item].volume);
+                return checkList;
+            }
+        }
+        const meal = new Meal(
+            selectedItemKey,
+            this.props.menuList[selectedItemKey].menuItem,
+            1, 
+            this.props.menuList[selectedItemKey].price)
+        checkList.push(meal);
+        return checkList;
+    }
+
+
     checkLocation(selected){
        if(selected){
            this.setState({
@@ -47,23 +67,6 @@ class Order extends React.Component {
             this.setState({
                 active: true
             })
-    }
-
-    checkDuplicateItem(selectedItemKey) {
-        const checkList = this.state.orderList;
-        const singlePrice = this.props.menuList[selectedItemKey].price;
-        for (let item in checkList) {
-            if (checkList[item].key === selectedItemKey) {
-                checkList[item].volume += 1;
-                checkList[item].price = Calculator.multiItemsPrice(singlePrice, checkList[item].volume);
-                return checkList;
-            }
-        }
-        const meal = new Meal(selectedItemKey,
-            this.props.menuList[selectedItemKey].menuItem,
-            1, this.props.menuList[selectedItemKey].price)
-        checkList.push(meal);
-        return checkList;
     }
 
     render() {

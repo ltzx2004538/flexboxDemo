@@ -29,7 +29,6 @@ const OrderMenuItem = ({
                     <button 
                         disabled={disableBtn}
                         className={btnClassName}
-                        key={item.key}
                         onClick={() => onClick(item.key)}
                     >
                         Order

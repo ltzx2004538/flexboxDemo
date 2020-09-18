@@ -11,10 +11,11 @@ const OrderMenu = ({
 }) => (
         <div className="menuList">
             {menuList.map((item) => (
-                <OrderMenuItem disableBtn = {disableBtn}
-                               key={item.key}
-                               item={item}
-                               onClick={onClick}
+                <OrderMenuItem
+                    key={item.key}
+                    item={item}
+                    disableBtn={disableBtn}
+                    onClick={onClick}
                 />
             ))}
         </div>
