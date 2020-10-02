@@ -1,19 +1,22 @@
-.searchBar{
+.searchBar {
     position: relative;
-    border: solid 2px;
-    z-index: 2;
+    width: 90%;
+    z-index: 1;
+    margin-right: 3%;
 
-    &__form{
-      outline: none;
+
+    &__form {
+        width: 100%;
+        
     }
 
-    &__input{
+    &__input {
         outline: none;
-
-        &:active{
-        outline: none;
-        border: 0;
-        }
+        border:2px solid rgb(127, 209, 222);
+        border-radius: 5px;
+        height:30px;
+        width: 100%;
+      
     }
 
 }

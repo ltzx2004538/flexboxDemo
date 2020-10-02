@@ -1,5 +1,6 @@
 import React from 'react';
 
+import './SearchBar.scss';
 
 
 const searchBar = ({
