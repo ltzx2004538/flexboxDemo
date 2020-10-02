@@ -5,6 +5,7 @@ import Meal from '../../../js/Meal';
 import OrderLocation from './components/OrderLocation';
 import Calculator from '../../../js/Calculator';
 import CheckoutBtns from '../Style/Button/Checkout/CheckoutBtns';
+import SearchDropdown from './Private/searchDropdown';
 import './Order.scss';
 
 
@@ -92,6 +93,7 @@ class Order extends React.Component {
                     <OrderLocation restaurantList={this.props.restaurantList}
                         checkLocation={this.checkLocation}
                     />
+                    <SearchDropdown/>
 
                     <Checkout active={active}
                         orderList={orderList}

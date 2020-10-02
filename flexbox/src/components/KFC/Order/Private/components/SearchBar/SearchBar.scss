@@ -1,0 +1,19 @@
+.searchBar{
+    position: relative;
+    border: solid 2px;
+    z-index: 2;
+
+    &__form{
+      outline: none;
+    }
+
+    &__input{
+        outline: none;
+
+        &:active{
+        outline: none;
+        border: 0;
+        }
+    }
+
+}
