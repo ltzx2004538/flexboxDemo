@@ -1,25 +1,30 @@
 import React from 'react';
 import SearchBar from '../SearchBar';
+import Select from '../Select';
 import './Dropdown.scss';
 
 
 
-const Dropdown =({
+const Dropdown = ({
     showDropdown,
     children
-})=>{
+}) => {
     let className = "dropdown "
-    if (showDropdown){
+    if (showDropdown) {
         className += "dropdown__active"
     }
 
-    return(
+    return (
         <div className={className}>
-            <div className = 'dropdown__corner'/>
-            <SearchBar/>
-
-
-
+            <div className='dropdown__corner' />
+            <div className='block'>
+                <SearchBar />
+            </div>
+            <div className='block'>
+                <Select>
+                    Contacts
+                </Select>
+            </div>
         </div>
     )
 }

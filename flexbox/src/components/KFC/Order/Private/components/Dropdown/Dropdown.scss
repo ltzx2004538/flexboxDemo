@@ -4,7 +4,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:15px 0px;
+    padding:40px 0px;
     top: 40px;
     left: 5px;
     width: 350px;
@@ -16,6 +16,7 @@
     transition: opacity .4s ease-out;
     z-index: 0;
     border-radius: 5px;
+   
    
 
     &__active {
@@ -40,4 +41,10 @@
         }
     }
 
+}
+
+.block{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

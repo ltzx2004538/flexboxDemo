@@ -1,22 +1,44 @@
+@import '../../../../Style/Button/nakedButton.scss';
+
 .searchBar {
     position: relative;
     width: 90%;
     z-index: 1;
-    margin-right: 3%;
+    margin-right: 1%;
+    display: flex;
+    // margin-top:8%;
 
 
     &__form {
         width: 100%;
-        
+        display: flex;
+
     }
 
     &__input {
         outline: none;
         border:2px solid rgb(127, 209, 222);
         border-radius: 5px;
-        height:30px;
+        height: 30px;
         width: 100%;
-      
+
+    }
+
+    &__right {
+        position: relative;
+
+        &__btn {
+            @extend .nakedButton;
+            position: absolute;
+            right:10px;
+
+            &__icon {
+                color: #0091ae;
+                height: 30px;
+                width: 30px;
+
+            }
+        }
     }
 
 }
