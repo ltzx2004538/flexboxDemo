@@ -21,21 +21,4 @@
 
         }
     }
-    &__container{
-        position: absolute;
-        top:30px;
-        left:5px;
-        height:50px;
-        width: 30px;
-        background-color: white;
-        border: solid 1px;
-        opacity: 0;
-        visibility: hidden;
-
-        &__active{
-            opacity: 1;
-            visibility: visible;
-        }
-
-    }
 }

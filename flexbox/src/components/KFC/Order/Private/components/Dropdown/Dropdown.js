@@ -17,10 +17,10 @@ const Dropdown = ({
     return (
         <div className={className}>
             <div className='dropdown__corner' />
-            <div className='block'>
-                <SearchBar />
-            </div>
-            <div className='block'>
+            <div className='dropdown__inner'>
+                <div className='dropdown__inner__wrapper'>
+                    <SearchBar />
+                </div>
                 <Select>
                     Contacts
                 </Select>

@@ -13,6 +13,7 @@ const searchBar = ({
             <form className="searchBar__form"
             >
                 <input className="searchBar__input"
+                       placeholder = "Search all records"
                 />
             </form>
             <div className="searchBar__right">
