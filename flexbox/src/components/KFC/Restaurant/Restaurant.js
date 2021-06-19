@@ -66,6 +66,9 @@ class Restaurant extends React.Component {
                     <div className='restaurant__name'>
                         git master test
                         git master2 test
+                        git first test
+                        git fourth test
+                        git third test
                      </div>
                     <div className="restaurant__menu">
                         {menuAlpha.map((item) => (
