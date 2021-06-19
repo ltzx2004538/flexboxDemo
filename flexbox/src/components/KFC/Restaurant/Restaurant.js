@@ -64,8 +64,7 @@ class Restaurant extends React.Component {
             <div className="restaurantList">
                 <div className="restaurant">
                     <div className='restaurant__name'>
-                        Restaurant Alpha 111 test 555 master
-                        git abc
+                        git master test
                      </div>
                     <div className="restaurant__menu">
                         {menuAlpha.map((item) => (
