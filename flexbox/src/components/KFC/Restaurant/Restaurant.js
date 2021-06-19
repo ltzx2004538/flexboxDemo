@@ -64,11 +64,7 @@ class Restaurant extends React.Component {
             <div className="restaurantList">
                 <div className="restaurant">
                     <div className='restaurant__name'>
-<<<<<<< HEAD
                         Restaurant Alpha 111 test 555 master
-=======
-                        Restaurant Alpha 111 test 555
->>>>>>> git test 5
                         git abc
                      </div>
                     <div className="restaurant__menu">
